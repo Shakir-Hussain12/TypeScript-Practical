@@ -42,3 +42,13 @@ console.log('TS practical');
 // function calculate(price: number): number { return price * 0.8; }
 // const calculate = (price: number): number => price * 0.8;
 // console.log(calculate(100));
+
+// let names: string[] = ['Shakir', 'Mushahid', 'Asghar', 'Bob', 'Alice'];
+
+// const doesExist = (findName: string): boolean => {
+//     const exists = names.filter((name) => name === findName);
+//     console.log(exists);
+//     return exists.length > 0 ? true : false; 
+// }
+
+// console.log(doesExist('Hussain'));
