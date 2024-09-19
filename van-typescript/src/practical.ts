@@ -52,3 +52,10 @@ console.log('TS practical');
 // }
 
 // console.log(doesExist('Hussain'));
+
+//default and undefined parameters
+// const calculatePrice = (price: number, discount?: number): number => price - (discount || 0);
+// console.log(calculatePrice(100, 20));
+
+// const calculateScore = (initScore: number, penalty: number = 0): number => initScore - penalty;
+// console.log(calculateScore(100));
