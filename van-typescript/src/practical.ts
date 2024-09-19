@@ -29,3 +29,16 @@ console.log('TS practical');
 // let items:{brand: string, model: string, year?: number}[] | undefined = [item1, item2];
 // items.push({brand: 'Toyota', model: 'Mitsubishi'})
 // console.log(items);
+
+// functions
+// function greet(name: string){
+//     return 'Hello' + name;
+// }
+
+// const greet = (name: string) => 'Hello ' + name;
+
+// console.log(greet('Shakir'));
+
+// function calculate(price: number): number { return price * 0.8; }
+// const calculate = (price: number): number => price * 0.8;
+// console.log(calculate(100));
