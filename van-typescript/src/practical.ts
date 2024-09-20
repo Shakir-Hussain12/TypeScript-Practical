@@ -59,3 +59,20 @@ console.log('TS practical');
 
 // const calculateScore = (initScore: number, penalty: number = 0): number => initScore - penalty;
 // console.log(calculateScore(100));
+
+// const processInput = (arg: number | string): void => {
+//     if (typeof(arg) === 'string'){
+//         console.log(arg.toUpperCase());
+//     } else {
+//         arg = arg * 2;
+//         console.log(arg)
+//     }
+// }
+
+// processInput(2);
+
+// const createEmp = ({ id, check }: {id: number, check?: boolean}): {id: number, isActive?: boolean} => {
+//     return {id, isActive: check};
+// }
+
+// console.log(createEmp({id: 1}));
