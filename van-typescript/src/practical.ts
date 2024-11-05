@@ -72,7 +72,7 @@ console.log('TS practical');
 // processInput(2);
 
 // const createEmp = ({ id, check }: {id: number, check?: boolean}): {id: number, isActive?: boolean} => {
-//     return {id, isActive: check};
+//     return {id, isActive: check ? true : false};
 // }
 
 // console.log(createEmp({id: 1}));
