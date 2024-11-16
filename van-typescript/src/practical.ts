@@ -76,3 +76,6 @@ console.log('TS practical');
 // }
 
 // console.log(createEmp({id: 1}));
+
+
+// Aliases & interfaces
