@@ -1,5 +1,4 @@
 const attr = 'name';
-
 type Employee = {
     id: number;
     [attr]: string;
@@ -13,6 +12,16 @@ type Manager = {
 };
 
 type Staff = Employee | Manager;
+
+// let emp4: Employee = {
+//     id: 7,
+//     [attr]: 'Shakir',
+//     department: 'FS'
+// }
+
+// console.log(emp4);
+// emp4[attr] = 'Changed';
+// console.log(emp4);
 
 const printStaffDetails = (emp: Staff): void => {
     if ('employees' in emp) {
@@ -29,13 +38,3 @@ let emp2: Employee = {id: 2, name: 'Jane', department: 'HR'};
 let emp3: Manager = {id: 1, name: 'Johnson', employees: [emp1, emp2]};
 
 printStaffDetails(emp3);
-
-let emp4: Employee = {
-    id: 7,
-    [attr]: 'Shakir',
-    department: 'FS'
-}
-
-console.log(emp4);
-emp4[attr] = 'Changed';
-console.log(emp4);
