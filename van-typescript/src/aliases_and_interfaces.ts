@@ -1,12 +1,14 @@
+const attr = 'name';
+
 type Employee = {
     id: number;
-    name: string;
+    [attr]: string;
     department: string;
 };
 
 type Manager = {
     id: number;
-    name: string;
+    [attr]: string;
     employees: Employee[];
 };
 
@@ -27,3 +29,13 @@ let emp2: Employee = {id: 2, name: 'Jane', department: 'HR'};
 let emp3: Manager = {id: 1, name: 'Johnson', employees: [emp1, emp2]};
 
 printStaffDetails(emp3);
+
+let emp4: Employee = {
+    id: 7,
+    [attr]: 'Shakir',
+    department: 'FS'
+}
+
+console.log(emp4);
+emp4[attr] = 'Changed';
+console.log(emp4);
