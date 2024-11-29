@@ -3,7 +3,7 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 // import './practical.ts'
-import './alias_interface.ts'
+import './aliases_and_interfaces.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
