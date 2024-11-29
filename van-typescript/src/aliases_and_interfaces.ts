@@ -38,3 +38,21 @@ let emp2: Employee = {id: 2, name: 'Jane', department: 'HR'};
 let emp3: Manager = {id: 1, name: 'Johnson', employees: [emp1, emp2]};
 
 printStaffDetails(emp3);
+
+//intersecting types
+type Book = { isbn: number, title: string, price: number};
+type Discount = {discount: number}
+type DiscountedBook = Book & Discount;
+
+let Book1: Book = {
+    isbn: 12345,
+    title: 'Book 1',
+    price: 20,
+}
+
+let Book2: DiscountedBook = {
+    isbn: 12345,
+    title: 'Book 2',
+    price: 25,
+    discount: 10,
+}
