@@ -11,6 +11,7 @@ type Manager = {
     employees: Employee[];
 };
 
+// Unionizing Types - either of the given types
 type Staff = Employee | Manager;
 
 // let emp4: Employee = {
@@ -39,7 +40,7 @@ let emp3: Manager = {id: 1, name: 'Johnson', employees: [emp1, emp2]};
 
 printStaffDetails(emp3);
 
-//intersecting types
+//intersecting types - merges two types
 type Book = { isbn: number, title: string, price: number};
 type Discount = {discount: number}
 type DiscountedBook = Book & Discount;
@@ -56,3 +57,6 @@ let Book2: DiscountedBook = {
     price: 25,
     discount: 10,
 }
+
+console.log(Book1);
+console.log(Book2);
