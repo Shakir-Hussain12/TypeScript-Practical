@@ -56,7 +56,11 @@ let Book1: Book = {
     title: 'Book 1',
     price: 20,
     functions: [
-        () => console.log("First Function"),
+        //type 1
+        function() { 
+            console.log("First Function")
+        },
+        //type 2
         (message?: string) => console.log(`${message} ${Book1.title}`),
         (message?: string, amount?: number) => console.log(`${message} = ${(amount ? amount : 0) * Book1.price} `)
     ]
@@ -70,8 +74,8 @@ let Book1: Book = {
 // }
 
 console.log(Book1);
+// console.log(Book2);
 // Book1.functions[0]();
 // Book1.functions[1]('The Title is ');
 // Book1.functions[2]('Total Price', 5);
-// console.log(Book2);
  
