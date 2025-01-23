@@ -41,22 +41,37 @@ let emp3: Manager = {id: 1, name: 'Johnson', employees: [emp1, emp2]};
 printStaffDetails(emp3);
 
 //intersecting types - merges two types
-type Book = { isbn: number, title: string, price: number};
-type Discount = {discount: number}
-type DiscountedBook = Book & Discount;
-
+type Book = { 
+    isbn: number, 
+    title: string, 
+    price: number,
+    // methods
+    functions: ((...args: any[]) => void)[]
+};
+// type Discount = {discount: number}
+// type DiscountedBook = Book & Discount;
+ 
 let Book1: Book = {
     isbn: 12345,
     title: 'Book 1',
     price: 20,
+    functions: [
+        () => console.log("First Function"),
+        (message?: string) => console.log(`${message} ${Book1.title}`),
+        (message?: string, amount?: number) => console.log(`${message} = ${(amount ? amount : 0) * Book1.price} `)
+    ]
 }
 
-let Book2: DiscountedBook = {
-    isbn: 12345,
-    title: 'Book 2',
-    price: 25,
-    discount: 10,
-}
+// let Book2: DiscountedBook = {
+//     isbn: 12345,
+//     title: 'Book 2',
+//     price: 25,
+//     discount: 10,
+// }
 
 console.log(Book1);
-console.log(Book2);
+// Book1.functions[0]();
+// Book1.functions[1]('The Title is ');
+// Book1.functions[2]('Total Price', 5);
+// console.log(Book2);
+ 
