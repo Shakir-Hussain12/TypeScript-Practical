@@ -62,7 +62,10 @@ let Book1: Book = {
         },
         //type 2
         (message?: string) => console.log(`${message} ${Book1.title}`),
-        (message?: string, amount?: number) => console.log(`${message} = ${(amount ? amount : 0) * Book1.price} `)
+        (message?: string, amount?: number) => {
+            console.log(`${message} = ${(amount ? amount : 0) * Book1.price} `)
+            return;
+        }
     ]
 }
 
