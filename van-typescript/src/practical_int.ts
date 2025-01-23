@@ -5,3 +5,18 @@ interface Computer {
     storage?: number,
     upgradeRam(upg_value: number): boolean,
 }
+
+let PC: Computer = {
+    id: 'PC-101',
+    brand: 'MSI',
+    ram: 32,
+    storage: 512,
+    upgradeRam(upg_value) {
+        if (upg_value % 4 === 0) {
+            this.ram += upg_value;
+            return true;
+        }
+
+        return false;
+    }
+}
