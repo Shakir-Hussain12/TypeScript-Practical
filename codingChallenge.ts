@@ -25,8 +25,9 @@ const getFactors = (num: number): number => {
         if (num % div === 0) {
             sum += div
             num /= div
+        } else {
+            div += 1
         }
-        div += 1
     }
 
     return sum
