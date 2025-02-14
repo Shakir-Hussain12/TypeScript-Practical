@@ -3,7 +3,7 @@ interface Computer {
     brand: string,
     ram: number,
     storage?: number,
-    upgradeRam(upg_value: number): boolean,
+    upgradeRam(upg_value: number): number,
 }
 
 let PC: Computer = {
@@ -14,9 +14,10 @@ let PC: Computer = {
     upgradeRam(upg_value) {
         if (upg_value % 4 === 0) {
             this.ram += upg_value;
-            return true;
         }
 
-        return false;
+        return this.ram;
     }
 }
+
+console.log(PC.upgradeRam(15));
