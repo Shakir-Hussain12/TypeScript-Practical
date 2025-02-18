@@ -25,12 +25,16 @@ console.log(PC.upgradeRam(15));
 interface Person {
     name: string,
     age: number,
-    gender: string,
-    getDetails(): Person,
+    gender: string
 };
 
 interface DogOwner {
     dogName: string,
     dogAge: number,
-    getDogDetails(): DogOwner,
+}
+
+interface Job extends Person, DogOwner {
+    jobTitle: string,
+    jobLocation: string,
+    getDetails?(): Job,
 }
