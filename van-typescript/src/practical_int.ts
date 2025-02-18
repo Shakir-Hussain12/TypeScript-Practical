@@ -38,3 +38,26 @@ interface Job extends Person, DogOwner {
     jobLocation: string,
     getDetails?(): Job,
 }
+
+let first: Job = {
+    name: 'Shakir Hussain',
+    age: 25,
+    gender: 'Male',
+    dogName: 'Tommy',
+    dogAge: 5,
+    jobTitle: 'Software Engineer',
+    jobLocation: 'Karachi',
+    getDetails() {
+        return {
+            name: this.name,
+            age: this.age,
+            gender: this.gender,
+            dogName: this.dogName,
+            dogAge: this.dogAge,
+            jobTitle: this.jobTitle,
+            jobLocation: this.jobLocation,
+        }
+    },
+}
+
+console.log(first.getDetails ? first.getDetails() : "undefined");
