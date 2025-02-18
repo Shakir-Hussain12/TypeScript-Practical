@@ -28,12 +28,12 @@ interface Person {
     gender: string
 };
 
-interface DogOwner {
+interface DogOwner extends Person {
     dogName: string,
     dogAge: number,
 }
 
-interface Job extends Person, DogOwner {
+interface Job extends DogOwner {
     jobTitle: string,
     jobLocation: string,
     getDetails?(): Job,
