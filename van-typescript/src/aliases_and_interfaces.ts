@@ -1,7 +1,7 @@
 const attr = 'name';
 type Employee = {
     id: number;
-    [attr]: string;
+    [attr]: string; //only works with type
     department: string;
 };
 
