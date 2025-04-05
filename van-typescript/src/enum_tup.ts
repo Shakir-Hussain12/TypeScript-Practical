@@ -32,4 +32,11 @@ enum StringEnum {
     second = 'second'
 }
 console.log(StringEnum);
+
+// enum with a string and a number
+enum Third {
+    first = 1,
+    second = 'second',
+}
+console.log(Third);
  
