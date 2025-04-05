@@ -14,12 +14,14 @@ tuple.push(2);
 // console.log(person);
 
 //enum examples
+// basic enum example
 enum Sample {
     first,
     second
 }; 
 console.log(Sample)
 
+// enum with numerically assigned values
 enum Second {
     first = 1,
     second = 2
