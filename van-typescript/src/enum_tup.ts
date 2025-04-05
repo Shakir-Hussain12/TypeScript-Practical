@@ -17,6 +17,11 @@ tuple.push(2);
 enum Sample {
     first,
     second
-};
-
+}; 
 console.log(Sample)
+
+enum Second {
+    first = 1,
+    second = 2
+}
+console.log(Second); 
