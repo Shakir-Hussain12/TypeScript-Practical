@@ -24,4 +24,12 @@ enum Second {
     first = 1,
     second = 2
 }
-console.log(Second); 
+console.log(Second);
+
+// enum with string values
+enum StringEnum {
+    first = 'first',
+    second = 'second'
+}
+console.log(StringEnum);
+ 
