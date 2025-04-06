@@ -56,3 +56,30 @@ console.log(test);
 // };
 // let test2: strType = 'First';
 // console.log(test2);
+
+// sample exercise
+enum UserRole {
+    Admin = 'Admin',
+    Manager = 'Manager',
+    Employee = 'Employee',
+}
+
+type User = {
+    id: number;
+    name: string;
+    role: UserRole;
+    contact: [string, string];
+};
+
+let createUser = (user: User): User => {
+    let userDetails: User = user;
+    return userDetails; 
+}
+
+console.log("output here");
+console.log(createUser({
+    id: 1,
+    name: "John Doe",
+    role: UserRole.Admin,
+    contact: ['john@example.com', '123-456-7890']
+}));
