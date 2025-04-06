@@ -41,4 +41,18 @@ enum Third {
     second = 'second',
 }
 console.log(Third);
- 
+
+
+//working with re-assignment - number vs string
+enum numType {
+    value = 1,
+}; 
+let test: numType = 1;
+console.log(test);
+
+// this will throw an error because enum doesn't allow re-assignment of string values
+// enum strType {
+//     value = 'First',
+// };
+// let test2: strType = 'First';
+// console.log(test2);
