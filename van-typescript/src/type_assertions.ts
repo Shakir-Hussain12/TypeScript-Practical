@@ -5,8 +5,13 @@ let len: number = (ex as string).length
 console.log(len);
 
 interface Animal {
-    name: string; 
-    breed: string;
+    name: string, 
+    breed: string,
+};
+
+type Human = {
+    name: string,
+    age: number,
 };
 
 let animalObject = `{
@@ -23,5 +28,10 @@ let humanObject = `{
 let human = JSON.parse(humanObject) as Animal;
 let animal = JSON.parse(animalObject) as Animal;
 
-console.log(human); // No error, but you can't access age property because it is not part of the Animal interface
+console.log(human); // No error, but you can't access age property 
 console.log(animal);
+
+// bad practice
+let newHuman  = human as unknown;
+let fixedHuman = newHuman as Human;
+console.log(fixedHuman.age); // Age property can be accessed now
