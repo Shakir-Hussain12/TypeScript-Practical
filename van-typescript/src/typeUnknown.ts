@@ -13,4 +13,6 @@ if (typeof unknownValue === 'number') {
     unknownValue.charAt(0).toUpperCase();
 } else if (typeof unknownValue === 'boolean') {
     unknownValue != unknownValue;
+} else if (unknownValue instanceof Array) {
+    unknownValue.push(6);
 } 
