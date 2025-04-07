@@ -19,4 +19,22 @@ if (typeof unknownValue === 'number') {
     // Object.freeze(unknownValue); // prevents change to values alongside above
     unknownValue[0] = 9; // won't work
     unknownValue.push(6);
-} 
+}
+
+//sample practical example
+const getData = () => {
+    const random = Math.random();
+
+    if (random < 0.5) throw new Error("Value less than 0.5"); 
+    throw "Value greater than 0.5";
+};
+
+try {
+    getData();
+} catch (error) {
+    if (error instanceof(Error)) {
+        console.log(error.message)
+    } else {
+        console.log(error);
+    }
+}
