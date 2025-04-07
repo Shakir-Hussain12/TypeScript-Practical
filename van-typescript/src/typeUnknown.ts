@@ -13,6 +13,10 @@ if (typeof unknownValue === 'number') {
     unknownValue.charAt(0).toUpperCase();
 } else if (typeof unknownValue === 'boolean') {
     unknownValue != unknownValue;
-} else if (unknownValue instanceof Array) {
+} else if (unknownValue instanceof Array) { 
+    // Object.preventExtensions(unknownValue); //prevents addition of properties
+    unknownValue[0] = 9; // will work
+    // Object.freeze(unknownValue); // prevents change to values alongside above
+    unknownValue[0] = 9; // won't work
     unknownValue.push(6);
 } 
