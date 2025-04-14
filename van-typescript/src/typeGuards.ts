@@ -22,3 +22,28 @@ const checkValue = (val: someVal): void => {
         return; 
     }
 }
+
+// example 2: using === or !== operator
+type Dog = {
+    type: 'dog';
+    name: string;
+    bark(): void;
+}
+
+type Cat = {
+    type: 'cat';
+    name: string;
+    meow(): void;
+};
+
+type Animal = Dog | Cat;
+
+const makeSound = (animal: Animal): void => {
+    if (animal.type === 'dog') {
+        animal.bark();
+    } else if (animal.type === 'cat') {
+        animal.meow();
+    } else {
+        console.log('unknown animal type');
+    }
+};
