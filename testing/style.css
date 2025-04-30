@@ -1,0 +1,58 @@
+.box {
+    height: 30px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 10% 0;
+    text-align: center;
+    animation: fadeIn linear both; 
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    border-top: none;
+    border-bottom: none;
+}
+
+.box::before {
+    content: " ";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 5px;
+    width: 0; 
+    scale: 0.9;
+    background: linear-gradient(to right, white, blue);
+}
+
+.box::after {
+    content: " ";
+    position: absolute;
+    top: 30px;
+    right: 0;
+    height: 5px;
+    width: 0; 
+    scale: 0.9;
+    background: linear-gradient(to right, lightgreen, green);
+}
+
+.box:hover::after, .box:hover::before { 
+    animation: lineThrough 1s infinite alternate-reverse;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes lineThrough {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
