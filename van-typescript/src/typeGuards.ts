@@ -47,3 +47,14 @@ const makeSound = (animal: Animal): void => {
         console.log('unknown animal type');
     }
 };
+
+// using in operator
+
+const makeSound2 = (animal: Animal): void => {
+    if ('bark' in animal) {
+        animal.bark();
+    } else {
+        animal.meow();
+
+    }
+} 
