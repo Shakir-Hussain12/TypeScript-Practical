@@ -57,4 +57,13 @@ const makeSound2 = (animal: Animal): void => {
         animal.meow();
 
     }
-} 
+}
+
+//truthy and falsy guard
+const printLen = (str: string | null | undefined): void => {
+    if (str) {
+        console.log(str.length);
+    } else {
+        console.log("val is either null or undefined");
+    }
+}
