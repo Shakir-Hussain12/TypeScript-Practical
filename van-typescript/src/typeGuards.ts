@@ -67,3 +67,13 @@ const printLen = (str: string | null | undefined): void => {
         console.log("val is either null or undefined");
     }
 }
+
+//instance of operator
+const checkType = (val: string | Date): string => {
+    if (val instanceof Date) {
+        return val.toDateString();
+    } else {
+        return 'Normal String';
+    }
+}
+ 
