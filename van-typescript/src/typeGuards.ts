@@ -143,7 +143,7 @@ const Reducer = (action: Action = {
                 amount: 0,
             }
         default:
-            let exhaustiveCheck: never = action;
+            let exhaustiveCheck: never = action; // triggered only when there's an unhandled type
             throw(`Unhandled action type: ${exhaustiveCheck}`);
     }
 }
