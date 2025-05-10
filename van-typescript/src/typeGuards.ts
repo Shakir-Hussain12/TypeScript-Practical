@@ -73,7 +73,35 @@ const checkType = (val: string | Date): string => {
     if (val instanceof Date) {
         return val.toDateString();
     } 
-    
+
     return 'Normal String';
 }
+
+//type predicate 
+type Fish = {
+    swim(): void;
+};
+
+type Bird = {
+    fly(): void;
+};
+
+type Creature = Fish | Bird;
+let elem: Creature = Math.random() > 0.5 ? {
+    swim: () => console.log('swimming')
+} : {
+    fly: () => console.log('flying')
+};
+
+const isFish = (elem: Creature): elem is Fish => {
+    // return 'swim' in elem; // using in operator
+    return (elem as Fish).swim !== undefined; // type assertion
+}
+ 
+if (isFish(elem)) {
+    elem.swim();
+} else {
+    elem.fly();
+}
+
  
