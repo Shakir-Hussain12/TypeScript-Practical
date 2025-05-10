@@ -72,8 +72,8 @@ const printLen = (str: string | null | undefined): void => {
 const checkType = (val: string | Date): string => {
     if (val instanceof Date) {
         return val.toDateString();
-    } else {
-        return 'Normal String';
-    }
+    } 
+    
+    return 'Normal String';
 }
  
