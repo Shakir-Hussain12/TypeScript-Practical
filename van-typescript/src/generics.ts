@@ -37,3 +37,11 @@ let myObj: customInterface<string> = {
 }
 
 console.log(myObj.getDetails());
+
+//generic promise
+let getData = async(): Promise<string> => {
+    return 'Hello';
+}
+
+let res = getData();
+console.log(res);
