@@ -45,3 +45,17 @@ let getData = async(): Promise<string> => {
 
 let res = getData();
 console.log(res);
+
+//sample test
+let createArray = <T>(length: number, val: T): Array<T> => new Array(length).fill(val);
+
+console.log(createArray<string>(3, 'Hello'));
+console.log(createArray<number>(3, 123));
+
+// // multi varable generics
+let appendData = <T, U>(arr: Array<T | U>, data: U): Array<T | U> => {
+    arr.push(data);
+    return arr;
+}
+
+console.log(appendData<string, number>(['a', 'b', 'c', 345], 123));
