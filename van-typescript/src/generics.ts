@@ -59,3 +59,13 @@ let appendData = <T, U>(arr: Array<T | U>, data: U): Array<T | U> => {
 }
 
 console.log(appendData<string, number>(['a', 'b', 'c', 345], 123));
+
+
+//type constraint
+function constrainedFunc<T extends string | number>(val: T): T {
+    return val;
+}
+
+console.log(constrainedFunc("henlo"));
+console.log(constrainedFunc(123));
+console.log(constrainedFunc(true)); // Error: Argument of type 'boolean' is not assignable
