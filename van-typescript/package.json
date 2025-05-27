@@ -12,5 +12,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "zod": "^3.25.30"
   }
 }

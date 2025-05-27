@@ -1,12 +1,17 @@
-const url = 'https://www.course-api.com/react-tours-project';
+import { z } from 'zod';
 
-interface Tour {
-    id: string;
-    name: string;
-    info: string;
-    image: string;
-    price: number;
-}
+const url = 'https://www.course-api.com/react-tours-project'; 
+
+const tourSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    info: z.string(),
+    image: z.string(),
+    price: z.string(),
+    // rating: z.number(),
+});
+
+type Tour = z.infer<typeof tourSchema>;
 
 async function fetchData(url: string): Promise<Tour[]> {
     try {
