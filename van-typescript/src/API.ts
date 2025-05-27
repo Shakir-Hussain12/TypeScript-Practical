@@ -8,7 +8,7 @@ const tourSchema = z.object({
     info: z.string(),
     image: z.string(),
     price: z.string(),
-    // rating: z.number(),
+    // rating: z.number().optional().default(0), // Default value for rating if rating is not provided
 });
 
 type Tour = z.infer<typeof tourSchema>;
@@ -22,7 +22,13 @@ async function fetchData(url: string): Promise<Tour[]> {
         }
 
         const data: Tour[] = await resp.json();
-        return data;
+        // Validating data against the schema using zod
+        const safeData = z.array(tourSchema).safeParse(data);
+        if (!safeData.success) {
+            throw new Error(`Validation error: ${safeData.error}`);
+        }
+
+        return safeData.data;
     } catch (error) {
         console.log(error instanceof Error ? `Error: ${error.message}` : 'Unknown error');
         return [];
