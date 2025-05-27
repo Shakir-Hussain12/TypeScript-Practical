@@ -46,12 +46,39 @@
             transform: perspective(600px) rotateX(180deg);
         }
     }
+
+    .flexItem {
+        display: flex;
+        flex: 1 150px; 
+        height: 100vh;
+        gap: 10px;
+    }
+
+    .item {
+        height: 100px;
+        width: 100px;
+        border: solid;
+        text-align: center;
+    }
+
+    .item:nth-child(1) {
+        flex-grow: 5;
+    }
+    .item:nth-child(3) {
+        flex-grow: 3;
+    }
 </style>
 <body>
-    <div class="element"></div>
+    <!-- <div class="element"></div>
     <div class="element" style="left: 5%;"></div>
     <div class="element" style="left: 25%;"></div>
     <div class="element"></div>
-    <div class="element"></div>
+    <div class="element"></div> -->
+    
+    <div class="flexItem">
+        <div class="item">first</div>
+        <div class="item">second</div>
+        <div class="item">third</div>
+    </div>
 </body>
 </html>
