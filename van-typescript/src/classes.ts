@@ -23,6 +23,8 @@ const book = new Book("The Great Gatsby", ["F. Scott Fitzgerald"]);
 console.log(book.getDetails);
 console.log("Is book alterable?", book.isAlterable());
 
+//classes with interfaces
+// This code defines a class `Person` that implements the `GenPerson` interface.
 interface GenPerson {
     name: string;
     age: number;
