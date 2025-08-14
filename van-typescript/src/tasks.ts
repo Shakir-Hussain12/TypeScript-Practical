@@ -1,16 +1,46 @@
-const btn = document.querySelector<HTMLButtonElement>('.btn')!;
+type Task = {
+    description: string,
+    isCompleted: boolean
 
-const addTask = (txt: string): void => {
-    if (txt.length < 1) {
-        return;
+}
+const tasks: Task[] = JSON.parse(localStorage.getItem('tasks') || '[]');
+
+const list = document.querySelector<HTMLUListElement>('.list')!;
+const renderTasks = (): void => {
+    list.innerHTML = '';
+    if (tasks.length > 0) {
+        tasks.forEach((task) => {
+            console.log('here')
+            list.appendChild(document.createElement('li')).innerText = task.description;
+        });
     }
-    
-    const list = document.querySelector<HTMLUListElement>('.list')!;
-    list.appendChild(document.createElement('li')).textContent = txt;
+}
+renderTasks();
+
+const addTask = (task: Task): void => {
+    //Add task to existing array
+    tasks.push(task);
+
+    //Add to local Storage
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    //render
+    renderTasks();
 }
 
-btn.addEventListener('click', (e) => {
+const form = document.querySelector<HTMLFormElement>('.form')!;
+form.addEventListener('submit', (e: SubmitEvent) => {
     e.preventDefault();
     const inp = document.querySelector<HTMLInputElement>('.form-input')!;
-    addTask(inp.value);
+    if (inp.value) {
+        addTask({
+            description: inp.value,
+            isCompleted: false
+        });
+        inp.value = '';
+        return;
+    }
+
+    alert('Please enter a Description');
 });
+ 
