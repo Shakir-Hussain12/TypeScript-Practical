@@ -1,3 +1,5 @@
+import { PropsWithChildren } from "react";
+
 // first method
 function FirstComponent({ name, id }: { name: string, id?: number }): JSX.Element {
   return (
@@ -10,11 +12,17 @@ function FirstComponent({ name, id }: { name: string, id?: number }): JSX.Elemen
 
 
 // second method
-type propType = { 
-  name: string,
-  id?: number,
-  children?: React.ReactNode;
-}
+// type propType = { 
+//   name: string,
+//   id?: number,
+//   children?: React.ReactNode;
+// }
+
+// another children prop method
+type propType = PropsWithChildren<{
+  name: string;
+  id?: number;
+}>
 
 const SecondComponent = (props: propType): JSX.Element => {
   return (
