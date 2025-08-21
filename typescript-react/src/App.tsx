@@ -1,10 +1,10 @@
-import CompElement from './starter/02-props';
+import { FirstComponent, SecondComponent } from "./starter/02-props";
 
 function App() {
   return (
     <main>
-      <CompElement name="Shakir" id={1} />
-      <CompElement name="John" />
+      <FirstComponent name="Shakir" id={1} />
+      <SecondComponent name="John" />
     </main>
   );
 }
