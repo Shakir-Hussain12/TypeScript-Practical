@@ -1,12 +1,8 @@
-function Component() {
+function Component(): JSX.Element | null {
 
   const rand = Math.random();
   
-  if (rand < 0.33) {
-    return 'starter1';
-  }
-  
-  if (rand < 0.66) {
+  if (rand < 0.5) {
     return null;
   }
 
