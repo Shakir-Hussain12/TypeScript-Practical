@@ -3,6 +3,7 @@ import { useState } from "react";
 function Component() {
   const [text, setText] = useState("");
   const [num, setNum] = useState(0);
+  const [list, setList] = useState<(string | number)[]>([]);
 
   const updateValues = (): void => {
     setText(() => {
