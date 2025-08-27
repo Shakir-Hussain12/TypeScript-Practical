@@ -1,12 +1,9 @@
-import { FirstComponent, SecondComponent } from "./starter/02-props";
+import Component from "./starter/03-state";
 
 function App() {
   return (
     <main>
-      <FirstComponent name="Shakir" id={1} />
-      <SecondComponent name="John">
-        <p>This is the children prop</p>
-      </SecondComponent>
+       <Component />
     </main>
   );
 }
