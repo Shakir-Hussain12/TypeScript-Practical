@@ -4,8 +4,11 @@ function Component() {
   const [text, setText] = useState("");
   
   const updateValues = (): void => {
-    setText("State Updated");
-    console.log(text);
+    setText(() => {
+      const newState = 'State Updated';
+      console.log(newState);
+      return newState;
+    })
   }
 
   return (
