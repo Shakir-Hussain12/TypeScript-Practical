@@ -2,13 +2,21 @@ import { useState } from "react";
 
 function Component() {
   const [text, setText] = useState("");
-  
+  const [num, setNum] = useState(0);
+
   const updateValues = (): void => {
     setText(() => {
       const newState = 'State Updated';
       console.log(newState);
       return newState;
     })
+
+    setNum((prev) => {
+      const newState = prev + 1;
+      console.log(newState);
+      return newState;
+    })
+
   }
 
   return (
