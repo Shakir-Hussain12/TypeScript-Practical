@@ -18,6 +18,17 @@ function Component() {
       return newState;
     })
 
+    setList((prev) => {
+      const newState = [
+        ...prev,
+        text || 'State Updated',
+        num + 1
+      ]
+
+      console.log(prev);
+      console.log(newState);
+      return newState;
+    })
   }
 
   return (
