@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Component() {
 
@@ -6,6 +6,11 @@ function Component() {
   const [email, setEmail] = useState('');
 
   //if we're to use function outside of the element itself
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log({ text, email });
+  }
+
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     console.log(e.target.value);
     setEmail(e.target.value);
@@ -14,27 +19,25 @@ function Component() {
   return (
     <section>
       <h2>Controlled Form</h2>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <input 
           type="text"
           className="form-input mb-1" 
           value={text} 
           placeholder="Enter Text" 
           onChange={(e) => setText(e.target.value)}
+          required
           />
         <input type="email" 
           className="form-input mb-1" 
           value={email} 
           placeholder="Please Enter Email" 
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <button
           type="submit"
           className="btn btn-block"
-          onClick={(e) => {
-            e.preventDefault();
-            console.log({ text, email });
-          }}
         >
           Submit
         </button>
