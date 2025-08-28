@@ -12,8 +12,14 @@ function Component() {
     /*
       if you're not using controlled inputs, you would need to access the values from the event object directly
       const formData = new FormData(e.currentTarget) || new FormData(e.target as HTMLFormElement);
+      
+      // Accessing as an object
       const data = Object.fromEntries(formData);
       console.log(data);
+
+      // Accessing individual form fields
+      const name = formData.get('name') as string; //non-null assertion
+      const email = formData.get('email') as string;
     */
   }
 
