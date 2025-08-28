@@ -22,6 +22,16 @@ function Component() {
           placeholder="Please Enter Email" 
           onChange={(e) => setEmail(e.target.value)}
         />
+        <button
+          type="submit"
+          className="btn btn-block"
+          onClick={(e) => {
+            e.preventDefault();
+            console.log({ text, email });
+          }}
+        >
+          Submit
+        </button>
       </form>
     </section>
   );
