@@ -5,6 +5,12 @@ function Component() {
   const [text, setText] = useState('');
   const [email, setEmail] = useState('');
 
+  //if we're to use function outside of the element itself
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    console.log(e.target.value);
+    setEmail(e.target.value);
+  }
+
   return (
     <section>
       <h2>Controlled Form</h2>
