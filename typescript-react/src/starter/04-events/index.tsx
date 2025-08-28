@@ -9,6 +9,12 @@ function Component() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log({ text, email });
+    /*
+      if you're not using controlled inputs, you would need to access the values from the event object directly
+      const formData = new FormData(e.currentTarget) || new FormData(e.target as HTMLFormElement);
+      const data = Object.fromEntries(formData);
+      console.log(data);
+    */
   }
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
