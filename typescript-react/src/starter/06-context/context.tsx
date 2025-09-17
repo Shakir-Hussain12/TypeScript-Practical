@@ -1,10 +1,10 @@
 import { createContext, useContext, useState } from "react";
 
-const ThemeContext = createContext<string | undefined>(undefined);
+const ThemeContext = createContext<'Dark' | 'Light' | undefined>(undefined);
 
 export function ThemeProvider({ children }: {children: React.ReactNode}) {
     return (
-        <ThemeContext.Provider value="Hello">
+        <ThemeContext.Provider value='Light'>
             {children} 
         </ThemeContext.Provider>
     )
@@ -17,5 +17,5 @@ export const useTheme = () => {
         throw new Error("No Theme Defined");
     }
 
-    console.log(currTheme);
+    return currTheme;
 }
