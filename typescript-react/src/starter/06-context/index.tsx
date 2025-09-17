@@ -1,4 +1,4 @@
-import { changeTheme, useTheme } from "./context";
+import { changeTheme, useTheme } from "./themeFunctions";
 
 function Component() {
   const { Theme, setTheme } = useTheme();
