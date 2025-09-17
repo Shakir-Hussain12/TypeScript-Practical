@@ -1,10 +1,24 @@
 import { createContext, useContext, useState } from "react";
 
-const ThemeContext = createContext<'Dark' | 'Light' | undefined>(undefined);
+type Theme = 'Dark' | 'Light';
 
-export function ThemeProvider({ children }: {children: React.ReactNode}) {
+type ThemeContextType = {
+    Theme: Theme;
+    setTheme: (theme: Theme) => void;
+}
+
+type ThemeProviderProps = {
+    children: React.ReactNode;
+    defaultTheme?: Theme;
+}
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export function ThemeProvider({ children, defaultTheme = 'Light' }: ThemeProviderProps) {
+    const [Theme, setTheme] = useState<Theme>(defaultTheme);
+
     return (
-        <ThemeContext.Provider value='Light'>
+        <ThemeContext.Provider value={{ Theme, setTheme }}>
             {children} 
         </ThemeContext.Provider>
     )
@@ -18,4 +32,10 @@ export const useTheme = () => {
     }
 
     return currTheme;
+}
+
+export const changeTheme = (theme: Theme) => {
+    const body = document.body;
+    body.style.backgroundColor = theme === 'Dark' ? '#333' : '#FFF';
+    body.style.color = theme === 'Dark' ? '#FFF' : '#000';
 }
